@@ -1,0 +1,18 @@
+{
+    "name": "erikmitchell/bc-dev-tools",
+    "description": "Dev Tools for the Boomi CMS plugin",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "erikdmitchell\\bcdevtools\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Erik Mitchell",
+            "email": "erikdmitchell@gmail.com"
+        }
+    ],
+    "require": {}
+}
