@@ -8,13 +8,9 @@ bcMarketo.addFilter('bcMarketo_config', function(config) {
     return config; // Return the modified config
 });
 
-
-// Example of using the global bcMarketo object
-// bcMarketo.eventManager.addAction('someAction', () => {
-//     console.log('Some action executed!');
-// });
-
-// bcMarketo.eventManager.doAction('someAction'); // Logs: Some action executed!
+bcMarketo.addAction('bcMarketo_formLoaded', function(form) {
+    console.log('triggered bcMarketo_formLoaded');
+});
 
 // Add an action
 // EventManager.addAction('myCustomAction', function (data) {
