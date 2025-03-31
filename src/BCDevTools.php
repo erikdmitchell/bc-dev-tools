@@ -8,7 +8,7 @@
  */
 
 namespace erikdmitchell\bcdevtools;
-echo "abc";
+
 /**
  * BCDevTools class.
  */
