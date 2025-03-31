@@ -1,5 +1,7 @@
+// console.log('mkto.js loaded');
 // Adding a filter to modify the configuration
-bcMarketo.eventManager.addFilter('bcMarketo_config', function(config) {
+bcMarketo.addFilter('bcMarketo_config', function(config) {
+// console.log('triggered bcMarketo_config');    
     // Modify the config as needed
     config.ctaButtonText = 'Button Text Modified'; // Example modification
  
