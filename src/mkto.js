@@ -1,9 +1,12 @@
 console.log('bc dev tools mkto.js');
-console.log(bcMarketo);
+// console.log(bcMarketo);
 // Adding a filter to modify the configuration
 bcMarketo.eventManager.addFilter('bcMarketo_config', function(config) {
+console.log('adding filter bcMarketo_config'); 
+console.log('config', config);   
     // Modify the config as needed
-    config.ctaButtonText = 'Send'; // Example modification
+    config.ctaButtonText = 'Button Text Modified'; // Example modification
+console.log('modified config', config);    
     return config; // Return the modified config
 });
 
