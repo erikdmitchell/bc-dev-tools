@@ -32,7 +32,6 @@ class BCDevTools {
         $this->plugin_url = plugin_dir_url(__FILE__);
 
         add_action('wp_enqueue_scripts', array($this, 'scripts_styles'));
-        add_action('admin_init', array($this, 'admin'));
     }
 
     /**
@@ -48,14 +47,6 @@ class BCDevTools {
 		return self::$instance;
     }
 
-    public function scripts_styles() {
-        wp_enqueue_script('bc-dev-tools', BC_URL . '/vendor/erikmitchell/bc-dev-tools/src/mkto.js', array('bc-marketo'), '0.1.0', true);
-    }
-
-    public function admin() {
-        if (is_admin()) {
-            new Admin();
-        }
-    }
+    public function scripts_styles() {}
 
 }
