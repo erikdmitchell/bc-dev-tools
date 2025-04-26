@@ -40,6 +40,7 @@ class BCDevTools {
      * @return BCMigration Single instance of the class.
      */
     public static function init() {
+echo "foo monkey<br>";      
 		if ( ! self::$instance ) {
 			self::$instance = new self();
 		}
