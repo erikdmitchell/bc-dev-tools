@@ -9,6 +9,8 @@
 
 namespace erikdmitchell\bcdevtools;
 
+require_once __DIR__ . '/utils/Constants.php';
+
 /**
  * BCDevTools class.
  */
@@ -39,12 +41,12 @@ class BCDevTools {
      *
      * @return BCMigration Single instance of the class.
      */
-    public static function init() {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
-		}
+    public static function init() {  
+		  if ( ! self::$instance ) {
+  			self::$instance = new self();
+	  	}
 
-		return self::$instance;
+		  return self::$instance;
     }
 
     public function scripts_styles() {}
