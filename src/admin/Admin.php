@@ -81,7 +81,13 @@ class Admin {
 
         if ( ! empty( $settings ) ) {
             foreach ( $settings as $key => $value ) {
-                update_option( $prefix . '_' . $key, $value );
+                if ( is_array( $value ) ) {
+                    foreach ( $value as $sub_key => $sub_value ) {                      
+                        boomi_update_option( $key . '_' . $sub_key, $sub_value );
+                    }
+                } else {
+                    boomi_update_option( $prefix . '_' . $key, $value );
+                }
             }
         }
 
