@@ -23,6 +23,7 @@ class AdminBar {
      */
     private function __construct() {
         add_action( 'admin_bar_menu', array( $this, 'admin_bar_menu' ), PHP_INT_MAX );
+        add_action( 'admin_enqueue_scripts', array( $this, 'scripts_styles' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'scripts_styles' ) );
     }
 
@@ -64,7 +65,7 @@ class AdminBar {
         ] );
     }
 
-    public function scripts_styles() {
+    public function scripts_styles() {      
         wp_enqueue_style( 'bc-dev-tools-admin-bar', BC_URL . 'assets/css/bc-dev-admin.css' );
     }
 }
