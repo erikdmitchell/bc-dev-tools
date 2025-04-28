@@ -22,7 +22,9 @@ class AdminBar {
      * Constructor.
      */
     private function __construct() {
-        add_action( 'admin_bar_menu', [ $this, 'admin_bar_menu' ], PHP_INT_MAX );
+        add_action( 'admin_bar_menu', array( $this, 'admin_bar_menu' ), PHP_INT_MAX );
+        add_action( 'admin_enqueue_scripts', array( $this, 'scripts_styles' ) );
+        add_action( 'wp_enqueue_scripts', array( $this, 'scripts_styles' ) );
     }
 
     /**
@@ -49,13 +51,21 @@ class AdminBar {
             return;
         }
 
+        if ( defined( 'BC_DEV_MODE' ) && BC_DEV_MODE ) {
+            $class = 'bc-dev-tools-menu-active';
+        } else {
+            $class = 'bc-dev-tools-menu-inactive';
+        }
+
         $admin_bar->add_menu( [
-            'id'     => 'custom-menu-item',
-            'title'  => 'Menu Item',
-            'href'   => esc_url( admin_url( 'admin.php?page=custom-options-page' ) ),
-            'parent' => null,
-            'group'  => false,
-            'meta'   => '',
+            'id'     => 'bc-dev-tools-menu',
+            'title'  => 'CMS Dev Mode',
+            'href'   => esc_url( admin_url( 'admin.php?page=bc-dev-tools' ) ),
+            'meta'   => [ 'class' => $class ]
         ] );
+    }
+
+    public function scripts_styles() {      
+        wp_enqueue_style( 'bc-dev-tools-admin-bar', BC_URL . 'assets/css/bc-dev-admin.css' );
     }
 }
