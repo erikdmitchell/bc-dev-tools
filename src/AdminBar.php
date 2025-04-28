@@ -50,9 +50,9 @@ class AdminBar {
         }
 
         $admin_bar->add_menu( [
-            'id'     => 'custom-menu-item',
-            'title'  => 'Menu Item',
-            'href'   => esc_url( admin_url( 'admin.php?page=custom-options-page' ) ),
+            'id'     => 'bc-dev-tools-menu',
+            'title'  => 'CMS Dev Mode',
+            'href'   => esc_url( admin_url( 'admin.php?page=bc-dev-tools' ) ),
             'parent' => null,
             'group'  => false,
             'meta'   => '',

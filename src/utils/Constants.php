@@ -1,6 +1,6 @@
 <?php
 if ( ! defined( 'BC_DEV_MODE' ) ) {
-    define( 'BC_DEV_MODE', true ); // TODO: figure a better way to enable and control this
+    define( 'BC_DEV_MODE', (bool) get_option( '_bc_dev_settings_enable_dev_mode', false ) );
 }
 
 if ( ! defined( 'BC_DEV_VERSION' ) ) {
