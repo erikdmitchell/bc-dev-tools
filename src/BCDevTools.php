@@ -30,10 +30,10 @@ class BCDevTools {
      * 
      * @return void
      */
-    private function __construct() {
+    private function __construct() {        
         $this->plugin_url = plugin_dir_url(__FILE__);
 
-        add_action('wp_enqueue_scripts', array($this, 'scripts_styles'));
+        $this->includes();
     }
 
     /**
@@ -49,6 +49,23 @@ class BCDevTools {
 		  return self::$instance;
     }
 
-    public function scripts_styles() {}
+    private function includes() {
+        AdminBar::init();
 
+        if ( is_admin() ) {
+            $admin_dir = __DIR__ . '/admin/';
+
+            foreach ( glob( $admin_dir . '*.php' ) as $file ) {
+                require_once $file;
+    
+                $class_name = basename( $file, '.php' );
+    
+                $full_class = '\\erikdmitchell\\bcdevtools\\admin\\' . $class_name;
+    
+                if ( class_exists( $full_class ) && method_exists( $full_class, 'init' ) ) {
+                    $full_class::init();
+                }
+            }
+        }
+    }   
 }
