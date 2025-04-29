@@ -37,6 +37,12 @@
                             <input type="text" name="bc_dev_settings[aws_mp][customer_id]" id="aws-mp-customer-id" value="<?php echo boomi_get_option('aws_mp_customer_id', ''); ?>">
                         </div> 
                         <div class="bc-row">
+                            <label for="aws-mp-customer-token">
+                                Customer Token
+                            </label>
+                            <input type="text" name="bc_dev_settings[aws_mp][customer_token]" id="aws-mp-customer-token" value="<?php echo boomi_get_option('aws_mp_customer_token', ''); ?>">
+                        </div>                          
+                        <div class="bc-row">
                             <label for="aws-mp-product-code">
                                 Product Code
                             </label>
