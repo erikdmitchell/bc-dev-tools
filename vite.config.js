@@ -13,7 +13,7 @@ export default defineConfig({
         assetFileNames: 'assets/[name][extname]',
       },
     },
-    outDir: 'dist',        // or 'assets' directly
+    outDir: 'assets',        // or 'assets' directly
     assetsDir: '',         // disables extra subfolder inside dist
     emptyOutDir: true,
   },
