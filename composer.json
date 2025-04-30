@@ -1,11 +1,12 @@
 {
     "name": "erikdmitchell/bc-dev-tools",
+    "version": "0.2.0",
     "description": "Dev Tools for the Boomi CMS plugin",
     "type": "boomi-cms-plugin",
     "license": "GPL-3.0-or-later",
     "autoload": {
         "psr-4": {
-            "erikdmitchell\\bcdevtools\\": "src/"
+            "erikdmitchell\\bcdevtools\\": "includes/"
         }
     },
     "authors": [
