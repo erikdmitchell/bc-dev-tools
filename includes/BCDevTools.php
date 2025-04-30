@@ -16,6 +16,11 @@ require_once __DIR__ . '/utils/Constants.php';
  */
 class BCDevTools {
 
+    /**
+     * The plugin URL.
+     * 
+     * @var string
+     */
     private $plugin_url;
 
     /**
@@ -30,7 +35,7 @@ class BCDevTools {
      * 
      * @return void
      */
-    private function __construct() {        
+    private function __construct() {             
         $this->plugin_url = plugin_dir_url(__FILE__);
 
         $this->includes();
@@ -42,15 +47,26 @@ class BCDevTools {
      * @return BCMigration Single instance of the class.
      */
     public static function init() {  
-		  if ( ! self::$instance ) {
+		if ( ! self::$instance ) {
   			self::$instance = new self();
 	  	}
 
-		  return self::$instance;
+		return self::$instance;
     }
 
-    private function includes() {
-        AdminBar::init();
+    /**
+     * Include and initialize various parts of the plugin.
+     *
+     * Currently loads the admin bar and PAYG upgrade components.
+     * If in the admin, loads all PHP files in the admin directory.
+     * If a class matching the filename exists, and it has an init method,
+     * that method is called.
+     *
+     * TODO: Load admin bar and PAYG upgrade components in a better way.
+     */
+    private function includes() {      
+        AdminBar::init(); // TODO: Load better.
+        PAYGUpgrade::init(); // TODO: Load better.
 
         if ( is_admin() ) {
             $admin_dir = __DIR__ . '/admin/';
