@@ -9,8 +9,8 @@ export default defineConfig({
         style: resolve(__dirname, 'src/style.scss'),
       },
       output: {
-        entryFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name][extname]',
+        entryFileNames: '[name].js',
+        assetFileNames: '[name][extname]',
       },
     },
     outDir: 'assets',        // or 'assets' directly
