@@ -1,3 +1,4 @@
+console.log('bc-dev-tools main.js file');
 // import './style.scss'
 // import javascriptLogo from './javascript.svg'
 // import { setupCounter } from './counter.js'
@@ -21,4 +22,3 @@
 // `
 
 // setupCounter(document.querySelector('#counter'))
-alert('hello');

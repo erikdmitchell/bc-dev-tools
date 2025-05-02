@@ -25,3 +25,14 @@ export default defineConfig({
     },
   },
 });
+
+// vite.config.js
+// export default {
+//   build: {
+//     outDir: 'assets',       // or whatever you want, like 'dist'
+//     emptyOutDir: true,      // clears folder before each build
+//     rollupOptions: {
+//       input: 'src/main.js', // or multiple entry points
+//     },
+//   }
+// };
